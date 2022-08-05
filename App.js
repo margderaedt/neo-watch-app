@@ -1,7 +1,9 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import WelcomeScreen from './screens/welcomeScreen';
-import WatchScreen from './screens/watchScreen';
+import AboutScreen from './screens/aboutScreen';
+import FindScreen from './screens/findScreen';
+import DetailScreen from './screens/detailScreen';
 
 const Stack = createNativeStackNavigator();
 
@@ -12,10 +14,22 @@ export default function App() {
         <Stack.Screen
           name="WelcomeScreen"
           component={WelcomeScreen}
+          options={{ title: 'NEO Watch 3000' }}
         />
         <Stack.Screen
-          name="WatchScreen"
-          component={WatchScreen}
+          name="AboutScreen"
+          component={AboutScreen}
+          options={{ title: 'About NEOs' }}
+        />
+        <Stack.Screen
+          name="FindScreen"
+          component={FindScreen}
+          options={{ title: 'Find NEOs' }}
+        />
+        <Stack.Screen
+          name="DetailScreen"
+          component={DetailScreen}
+          options={({ route }) => ({ title: route.params.neoReferenceId })}
         />
       </Stack.Navigator>
     </NavigationContainer>
