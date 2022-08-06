@@ -30,12 +30,12 @@ export default function App() {
         <Stack.Screen
           name="ListScreen"
           component={ListScreen}
-          options={({ route }) => ({ title: `${route.params.date} NEOs`, nearEarthObjects: route.params.nearEarthObjects })}
+          options={({ route }) => ({ title: `${route.params.date} NEOs`, date: route.params.date })}
         />
         <Stack.Screen
           name="DetailScreen"
           component={DetailScreen}
-          options={({ route }) => ({ title: route.params.neoReferenceId, nearEarthObject: route.params.nearEarthObject })}
+          options={({ route }) => ({ title: `NEO: ${route.params.neoReferenceId}`, nearEarthObject: route.params.nearEarthObject })}
         />
       </Stack.Navigator>
     </NavigationContainer>
