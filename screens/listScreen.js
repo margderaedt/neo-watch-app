@@ -4,7 +4,7 @@ import { theme } from '../styles/stylesheet';
 import ThemedHeader from '../components/ThemedHeader/index';
 import ThemedLink from '../components/ThemedLink/index';
 import ThemedText from '../components/ThemedText/index';
-import { NASA_API_URL, NASA_API_KEY } from '@env'
+import { NASA_API_URL, NASA_API_KEY } from '@env';
 
 const ErrorView = () => (
   <>
@@ -18,7 +18,6 @@ const LoadingView = () => (
     <ThemedHeader text={'Loading...'} />
   </>
 );
-
 
 const ListScreen = ({ navigation, route }) => {
   const [nearEarthObjects, setNearEarthObjects] = useState(null);
@@ -34,10 +33,9 @@ const ListScreen = ({ navigation, route }) => {
     .then(data => {
       setLoading(false);
       setNearEarthObjects(data['near_earth_objects'][date])
-    }
-    )
+    })
     .catch((error) => { setError(error)})
-  },[])
+  },[]);
 
   return (
     <ScrollView contentContainerStyle={theme.container}>
