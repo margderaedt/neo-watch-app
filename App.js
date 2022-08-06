@@ -3,6 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import WelcomeScreen from './screens/welcomeScreen';
 import AboutScreen from './screens/aboutScreen';
 import FindScreen from './screens/findScreen';
+import ListScreen from './screens/listScreen';
 import DetailScreen from './screens/detailScreen';
 
 const Stack = createNativeStackNavigator();
@@ -27,9 +28,14 @@ export default function App() {
           options={{ title: 'Find NEOs' }}
         />
         <Stack.Screen
+          name="ListScreen"
+          component={ListScreen}
+          options={({ route }) => ({ title: `${route.params.date} NEOs`, nearEarthObjects: route.params.nearEarthObjects })}
+        />
+        <Stack.Screen
           name="DetailScreen"
           component={DetailScreen}
-          options={({ route }) => ({ title: route.params.neoReferenceId })}
+          options={({ route }) => ({ title: route.params.neoReferenceId, nearEarthObject: route.params.nearEarthObject })}
         />
       </Stack.Navigator>
     </NavigationContainer>
