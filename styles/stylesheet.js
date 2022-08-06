@@ -7,11 +7,14 @@ export const theme = StyleSheet.create({
     flex: 1,
     width: '100%',
     backgroundColor: '#000',
+    paddingBottom: 24,
+    paddingTop: 24,
   },
   header: {
     fontSize: 24,
     color: '#fff',
     paddingBottom: 24,
+    paddingTop: 24,
     fontWeight: 'bold',
   },
   text: {
