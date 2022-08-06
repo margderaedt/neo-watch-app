@@ -63,11 +63,6 @@ export const theme = StyleSheet.create({
     letterSpacing: 0.25,
     color: '#000',
   },
-  lineStyle:{
-    borderBottomWidth: 1,
-    borderBottomColor:'#fff',
-    margin: 10,
-  },
   input: {
     height: 40,
     margin: 12,
@@ -101,4 +96,13 @@ export const theme = StyleSheet.create({
     letterSpacing: 0.25,
     color: '#000',
   },
+  keyText: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#FFF',
+  },
+  valueText: {
+    fontSize: 16,
+    color: '#FFF',
+  }
 });
