@@ -104,5 +104,19 @@ export const theme = StyleSheet.create({
   valueText: {
     fontSize: 16,
     color: '#FFF',
+  },
+  warningText: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#f24235',
+  },
+  successText: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#3cbd49',
+  },
+  infoContainer: {
+    paddingBottom: 16,
+    alignItems: 'center',
   }
 });

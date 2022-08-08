@@ -13,11 +13,7 @@ const ErrorView = () => (
   </>
 );
 
-const LoadingView = () => (
-  <>
-    <ThemedHeader text={'Loading...'} />
-  </>
-);
+const LoadingView = () => ( <ThemedHeader text={'Loading...'} /> );
 
 const ListScreen = ({ navigation, route }) => {
   const [nearEarthObjects, setNearEarthObjects] = useState(null);
