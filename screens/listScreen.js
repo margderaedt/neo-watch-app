@@ -14,7 +14,7 @@ const ErrorView = () => (
   </>
 );
 
-const LoadingView = () => ( <ThemedHeader text={'Loading...'} /> );
+const LoadingView = () => <ThemedHeader text={'Loading...'} />;
 
 const ListScreen = ({ navigation, route }) => {
   const [nearEarthObjects, setNearEarthObjects] = useState(null);
@@ -45,7 +45,7 @@ const ListScreen = ({ navigation, route }) => {
                 <ThemedHeader text={`We found ${nearEarthObjects.length} NEO${nearEarthObjects.length > 1 ? 's' : ''} for ${date}!`} />
                 <ThemedText text={'Select an object below for more information.'} />
                 {nearEarthObjects.map((neo, index) => (
-                  <ThemedLink key={`neo-ref-link-${index}`} text={`NEO Reference ID: ${neo['neo_reference_id']}`} onPressLink={() => navigation.push('DetailScreen', { screen: 'DetailScreen', neoReferenceId: neo['neo_reference_id'], nearEarthObject: neo })} />
+                  <ThemedLink key={`neo-ref-link-${index}`} text={`NEO Reference ID: ${neo['neo_reference_id']}`} onPressLink={() => navigation.push('DetailScreen', { screen: 'DetailScreen', nearEarthObject: neo })} />
                 ))}
                 <ThemedButton
                   text={'Select A New Date'}

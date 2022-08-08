@@ -33,7 +33,8 @@ const DetailScreen = ({ navigation, route }) => {
         </View>
         <View style={theme.infoContainer}>
           <Text style={theme.keyText}>Potentially Hazardous?</Text>
-          <Text style={nearEarthObject['is_potentially_hazardous_asteroid']
+          <Text style={
+            nearEarthObject['is_potentially_hazardous_asteroid']
               ? theme.warningText
               : theme.successText
             }

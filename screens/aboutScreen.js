@@ -15,7 +15,8 @@ const AboutScreen = ({ navigation }) => {
           <ThemedText text={`A NEO is an asteroid or comet that finds itself in Earth's orbit. We can learn a lot about our solar system by studying them. By visting`} />
           <Text
             style={{color: 'blue', textAlign: 'left'}}
-            onPress={() => Linking.openURL('https://cneos.jpl.nasa.gov/')}>
+            onPress={() => Linking.openURL('https://cneos.jpl.nasa.gov/')}
+          >
             Center For Near Earth Object Studies
           </Text>
           <ThemedText text={`you can learn a lot more about these fascinating space debris.`}/>
