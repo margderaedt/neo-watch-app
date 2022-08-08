@@ -10,6 +10,15 @@ export const theme = StyleSheet.create({
     paddingTop: 24,
     width: '100%',
   },
+  scrollContainer: {
+    alignItems: 'center',
+    backgroundColor: '#000',
+    flexGrow: 1,
+    justifyContent: 'center',
+    paddingBottom: 24,
+    paddingTop: 24,
+    width: '100%',
+  },
   header: {
     color: '#fff',
     fontSize: 24,

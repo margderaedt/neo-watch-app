@@ -1,7 +1,8 @@
 import React, {useEffect, useState} from 'react';
 import { NASA_API_URL, NASA_API_KEY } from '@env';
-import { ScrollView } from 'react-native';
+import { ScrollView, View, TouchableOpacity } from 'react-native';
 import { theme } from '../styles/stylesheet';
+import ThemedButton from '../components/ThemedButton/index';
 import ThemedHeader from '../components/ThemedHeader/index';
 import ThemedLink from '../components/ThemedLink/index';
 import ThemedText from '../components/ThemedText/index';
@@ -34,19 +35,31 @@ const ListScreen = ({ navigation, route }) => {
   },[]);
 
   return (
-    <ScrollView contentContainerStyle={theme.container}>
-      {error && <ErrorView />}
-      {loading && <LoadingView />}
-      {(nearEarthObjects && !error) &&
-        <>
-          <ThemedHeader text={`We found ${nearEarthObjects.length} NEO${nearEarthObjects.length > 1 ? 's' : ''} for ${date}!`} />
-          <ThemedText text={'Select an object below for more information.'} />
-          {nearEarthObjects.map((neo, index) => (
-            <ThemedLink key={`neo-ref-link-${index}`} text={`NEO Reference ID: ${neo['neo_reference_id']}`} onPressLink={() => navigation.push('DetailScreen', { screen: 'DetailScreen', neoReferenceId: neo['neo_reference_id'], nearEarthObject: neo })} />
-          ))}
-        </>
-      }
-    </ScrollView>
+      <View style={theme.container} onStartShouldSetResponder={() => true}>
+        <ScrollView contentContainerStyle={theme.scrollContainer}>
+          <TouchableOpacity activeOpacity={1}>
+            {error && <ErrorView />}
+            {loading && <LoadingView />}
+            {(nearEarthObjects && !error) &&
+              <>
+                <ThemedHeader text={`We found ${nearEarthObjects.length} NEO${nearEarthObjects.length > 1 ? 's' : ''} for ${date}!`} />
+                <ThemedText text={'Select an object below for more information.'} />
+                {nearEarthObjects.map((neo, index) => (
+                  <ThemedLink key={`neo-ref-link-${index}`} text={`NEO Reference ID: ${neo['neo_reference_id']}`} onPressLink={() => navigation.push('DetailScreen', { screen: 'DetailScreen', neoReferenceId: neo['neo_reference_id'], nearEarthObject: neo })} />
+                ))}
+                <ThemedButton
+                  text={'Select A New Date'}
+                  onPressButton={() => navigation.push('FindScreen', { screen: 'FindScreen' })}
+                />
+              <ThemedButton
+                text={'Back to Home'}
+                onPressButton={() => navigation.push('WelcomeScreen')}
+              />
+              </>
+            }
+          </TouchableOpacity>
+        </ScrollView>
+      </View>
   );
 }
 
