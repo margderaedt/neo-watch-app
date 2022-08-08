@@ -11,6 +11,7 @@ export const theme = StyleSheet.create({
     paddingTop: 24,
   },
   header: {
+    textAlign: 'center',
     fontSize: 24,
     color: '#fff',
     paddingBottom: 24,
