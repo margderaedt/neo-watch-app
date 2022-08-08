@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { View } from 'react-native';
 import { theme } from '../styles/stylesheet';
-import ThemedHeader from '../components/ThemedHeader/index';
+import { View, ImageBackground } from 'react-native';
 import ThemedButton from '../components/ThemedButton/index';
+import ThemedHeader from '../components/ThemedHeader/index';
+import WelcomeScreenBackground from '../assets/welcome-screen-background.jpg';
 
 // Use newer DatePicker as recommended by expo and React Native, rather than react-natives DatePickerIOS
 // Which is being deprecated and does not support android.
@@ -22,20 +23,22 @@ const FindScreen = ({ navigation }) => {
 
   return (
     <View style={theme.container}>
-      <ThemedHeader text={'Enter a date below to find NEOs detected by NASA:'} />
-        <DateTimePicker
-          testID="dateTimePicker"
-          value={date}
-          onChange={onChange}
-          show={true}
-          display='default'
-          locale='en-CA' // Use Canadian English locale for YYYY-MM-DD date display formatting
-          style={{width: 120, marginBottom: 16, backgroundColor: "white"}}
+      <ImageBackground source={WelcomeScreenBackground} style={theme.homeScreenImage}>
+        <ThemedHeader text={'Enter a date below to find NEOs detected by NASA:'} />
+          <DateTimePicker
+            testID="dateTimePicker"
+            value={date}
+            onChange={onChange}
+            show={true}
+            display='default'
+            locale='en-CA' // Use Canadian English locale for YYYY-MM-DD date display formatting
+            style={{width: 120, marginBottom: 16, backgroundColor: "white"}}
+          />
+        <ThemedButton
+          text={'Find NEOs!'}
+          onPressButton={() => onFind()}
         />
-      <ThemedButton
-        text={'Find NEOs!'}
-        onPressButton={() => onFind()}
-      />
+      </ImageBackground>
     </View>
   );
 }

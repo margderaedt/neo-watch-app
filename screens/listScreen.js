@@ -1,10 +1,10 @@
 import React, {useEffect, useState} from 'react';
+import { NASA_API_URL, NASA_API_KEY } from '@env';
 import { ScrollView } from 'react-native';
 import { theme } from '../styles/stylesheet';
 import ThemedHeader from '../components/ThemedHeader/index';
 import ThemedLink from '../components/ThemedLink/index';
 import ThemedText from '../components/ThemedText/index';
-import { NASA_API_URL, NASA_API_KEY } from '@env';
 
 const ErrorView = () => (
   <>

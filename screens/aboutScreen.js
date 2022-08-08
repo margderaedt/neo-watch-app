@@ -1,8 +1,8 @@
 import React from 'react';
-import { View, ImageBackground, Linking, Text } from 'react-native';
 import { theme } from '../styles/stylesheet';
-import ThemedHeader from '../components/ThemedHeader/index';
+import { View, ImageBackground, Linking, Text } from 'react-native';
 import ThemedButton from '../components/ThemedButton/index';
+import ThemedHeader from '../components/ThemedHeader/index';
 import ThemedText from '../components/ThemedText/index';
 import WelcomeScreenBackground from '../assets/welcome-screen-background.jpg';
 
