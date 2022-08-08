@@ -73,12 +73,6 @@ export const theme = StyleSheet.create({
     letterSpacing: 0.25,
     lineHeight: 21,
   },
-  input: {
-    borderWidth: 1,
-    height: 40,
-    margin: 12,
-    padding: 10,
-  },
   link: {
     alignItems: 'center',
     backgroundColor: '#fff',
