@@ -11,7 +11,7 @@ Or follow the more in depth instructions [here](https://docs.expo.dev/workflow/i
 
 2. `git clone` this repo
 3. `cd neo-watch-app`
-4. Setup your `.env` using the `.env.sample` as a guide and fill in with your given API key
+4. Setup your `.env` using the `.env.sample` as a guide and fill in with your given API key and url.
 5. Run `npm install`
 6. Run `npm start` 
 7. Scan the QR code with your phone(note: you will need the Expo Go app installed on your mobile device), or run expo on your laptop(see step 1 to install iOS Simulator), and you're good to go! 🎉
