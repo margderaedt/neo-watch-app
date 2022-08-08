@@ -37,7 +37,7 @@ export const theme = StyleSheet.create({
   },
   button: {
     alignItems: 'center',
-    backgroundColor: '#FFF',
+    backgroundColor: '#fff',
     borderRadius: 4,
     elevation: 3,
     justifyContent: 'center',
@@ -48,7 +48,7 @@ export const theme = StyleSheet.create({
   },
   buttonPressed: {
     alignItems: 'center',
-    backgroundColor: '#5234EB',
+    backgroundColor: '#5234eb',
     borderRadius: 4,
     elevation: 3,
     justifyContent: 'center',
@@ -72,7 +72,7 @@ export const theme = StyleSheet.create({
   },
   link: {
     alignItems: 'center',
-    backgroundColor: '#FFF',
+    backgroundColor: '#fff',
     borderRadius: 2,
     elevation: 3,
     justifyContent: 'center',
@@ -82,7 +82,7 @@ export const theme = StyleSheet.create({
   },
   linkPressed: {
     alignItems: 'center',
-    backgroundColor: '#5234EB',
+    backgroundColor: '#5234eb',
     borderRadius: 2,
     elevation: 3,
     justifyContent: 'center',
@@ -98,12 +98,12 @@ export const theme = StyleSheet.create({
     lineHeight: 21,
   },
   keyText: {
-    color: '#FFF',
+    color: '#fff',
     fontSize: 16,
     fontWeight: 'bold',
   },
   valueText: {
-    color: '#FFF',
+    color: '#fff',
     fontSize: 16,
   },
   warningText: {
