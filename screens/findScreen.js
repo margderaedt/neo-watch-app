@@ -12,7 +12,7 @@ import DateTimePicker from '@react-native-community/datetimepicker';
 const FindScreen = ({ navigation }) => {
   const [date, setDate] = useState(new Date());
 
-  const onChange = (selectedValue) => {
+  const onChange = (event, selectedValue) => {
     const currentDate = selectedValue || new Date();
     setDate(currentDate);
   };
