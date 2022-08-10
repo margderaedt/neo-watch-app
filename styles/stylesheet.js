@@ -127,6 +127,7 @@ export const theme = StyleSheet.create({
     color: '#fff',
     textDecorationLine: 'underline',
     textAlign: 'center',
+    padding: 12,
   },
   hyperLink: {
     color: 'blue',
