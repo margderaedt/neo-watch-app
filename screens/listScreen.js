@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useEffect, useState, useRef} from 'react';
 import { NASA_API_URL, NASA_API_KEY } from '@env';
 import { ScrollView, View, TouchableOpacity, Text } from 'react-native';
 import { theme } from '../styles/stylesheet';
@@ -20,8 +20,16 @@ const ListScreen = ({ navigation, route }) => {
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
 
+  const scrollRef = useRef();
   const { date } = route.params;
   const apiUrl = `${NASA_API_URL}?start_date=${date}&end_date=${date}&api_key=${NASA_API_KEY}`;
+
+  const handleScroll = () => {
+    scrollRef.current.scrollTo({
+      y: 0,
+      animated: true,
+    });
+  }
 
   useEffect(() => {
     fetch(apiUrl)
@@ -35,7 +43,7 @@ const ListScreen = ({ navigation, route }) => {
 
   return (
     <View style={theme.container} onStartShouldSetResponder={() => true}>
-      <ScrollView contentContainerStyle={theme.scrollContainer}>
+      <ScrollView contentContainerStyle={theme.scrollContainer} ref={scrollRef}>
         <TouchableOpacity activeOpacity={1}>
           {error && <ErrorView />}
           {loading && <LoadingView />}
@@ -52,6 +60,14 @@ const ListScreen = ({ navigation, route }) => {
               {nearEarthObjects.map((neo, index) => (
                 <ThemedLink key={`neo-ref-link-${index}`} text={`NEO Reference ID: ${neo['neo_reference_id']}`} onPressLink={() => navigation.push('DetailScreen', { screen: 'DetailScreen', neoReferenceId: neo['neo_reference_id'], nearEarthObject: neo })} />
               ))}
+              {(nearEarthObjects.length > 8) && // Only render when list is long enough to scroll
+                <Text
+                  style={theme.underlinedLink}
+                  onPress={() => handleScroll()}
+                >
+                  Scroll to Top
+                </Text>
+              }
               <Text
                 style={theme.underlinedLink}
                 onPress={() => navigation.push('WelcomeScreen')}
