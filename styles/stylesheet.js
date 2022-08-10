@@ -132,5 +132,10 @@ export const theme = StyleSheet.create({
   hyperLink: {
     color: 'blue',
     textAlign: 'left',
+  },
+  datePickerStyle: {
+    width: 120,
+    marginBottom: 16,
+    backgroundColor: "white",
   }
 });
