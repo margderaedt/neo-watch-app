@@ -122,5 +122,13 @@ export const theme = StyleSheet.create({
   infoContainer: {
     alignItems: 'center',
     paddingBottom: 16,
+  },
+  underlinedLink: {
+    color: '#fff',
+    textDecorationLine: 'underline',
+  },
+  hyperLink: {
+    color: 'blue',
+    textAlign: 'left',
   }
 });
