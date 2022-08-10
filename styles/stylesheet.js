@@ -126,6 +126,7 @@ export const theme = StyleSheet.create({
   underlinedLink: {
     color: '#fff',
     textDecorationLine: 'underline',
+    textAlign: 'center',
   },
   hyperLink: {
     color: 'blue',

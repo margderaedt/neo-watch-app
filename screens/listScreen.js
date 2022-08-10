@@ -1,8 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { NASA_API_URL, NASA_API_KEY } from '@env';
-import { ScrollView, View, TouchableOpacity } from 'react-native';
+import { ScrollView, View, TouchableOpacity, Text } from 'react-native';
 import { theme } from '../styles/stylesheet';
-import ThemedButton from '../components/ThemedButton/index';
 import ThemedHeader from '../components/ThemedHeader/index';
 import ThemedLink from '../components/ThemedLink/index';
 import ThemedText from '../components/ThemedText/index';
@@ -43,18 +42,22 @@ const ListScreen = ({ navigation, route }) => {
           {(nearEarthObjects && !error) &&
             <>
               <ThemedHeader text={`We found ${nearEarthObjects.length} NEO${nearEarthObjects.length === 1 ? '' : 's'} for ${date}!`} />
+              <Text
+                style={theme.underlinedLink}
+                onPress={() => navigation.push('FindScreen', { screen: 'FindScreen' })}
+              >
+                Select A New Date
+              </Text>
               <ThemedText text={'Select an object below for more information.'} />
               {nearEarthObjects.map((neo, index) => (
                 <ThemedLink key={`neo-ref-link-${index}`} text={`NEO Reference ID: ${neo['neo_reference_id']}`} onPressLink={() => navigation.push('DetailScreen', { screen: 'DetailScreen', neoReferenceId: neo['neo_reference_id'], nearEarthObject: neo })} />
               ))}
-              <ThemedButton
-                text={'Select A New Date'}
-                onPressButton={() => navigation.push('FindScreen', { screen: 'FindScreen' })}
-              />
-              <ThemedButton
-                text={'Back to Home'}
-                onPressButton={() => navigation.push('WelcomeScreen')}
-              />
+              <Text
+                style={theme.underlinedLink}
+                onPress={() => navigation.push('WelcomeScreen')}
+              >
+                Back to Home
+              </Text>
             </>
           }
         </TouchableOpacity>
