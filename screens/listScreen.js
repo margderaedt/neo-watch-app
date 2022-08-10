@@ -42,7 +42,7 @@ const ListScreen = ({ navigation, route }) => {
           {loading && <LoadingView />}
           {(nearEarthObjects && !error) &&
             <>
-              <ThemedHeader text={`We found ${nearEarthObjects.length} NEO${nearEarthObjects.length > 1 ? 's' : ''} for ${date}!`} />
+              <ThemedHeader text={`We found ${nearEarthObjects.length} NEO${nearEarthObjects.length === 1 ? '' : 's'} for ${date}!`} />
               <ThemedText text={'Select an object below for more information.'} />
               {nearEarthObjects.map((neo, index) => (
                 <ThemedLink key={`neo-ref-link-${index}`} text={`NEO Reference ID: ${neo['neo_reference_id']}`} onPressLink={() => navigation.push('DetailScreen', { screen: 'DetailScreen', neoReferenceId: neo['neo_reference_id'], nearEarthObject: neo })} />
