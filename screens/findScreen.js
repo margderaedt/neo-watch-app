@@ -32,7 +32,7 @@ const FindScreen = ({ navigation }) => {
             show={true}
             display='default'
             locale='en-CA' // Use Canadian English locale for YYYY-MM-DD date display formatting
-            style={{width: 120, marginBottom: 16, backgroundColor: "white"}}
+            style={theme.datePickerStyle}
           />
         <ThemedButton
           text={'Find NEOs!'}

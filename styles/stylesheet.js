@@ -122,5 +122,20 @@ export const theme = StyleSheet.create({
   infoContainer: {
     alignItems: 'center',
     paddingBottom: 16,
+  },
+  underlinedLink: {
+    color: '#fff',
+    textDecorationLine: 'underline',
+    textAlign: 'center',
+    padding: 12,
+  },
+  hyperLink: {
+    color: 'blue',
+    textAlign: 'left',
+  },
+  datePickerStyle: {
+    width: 120,
+    marginBottom: 16,
+    backgroundColor: "white",
   }
 });
